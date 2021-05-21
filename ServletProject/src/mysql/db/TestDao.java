@@ -29,6 +29,7 @@ public class TestDao {
 				dto.setHeight(rs.getDouble("height"));
 				dto.setBirth(rs.getString("birth"));
 				dto.setWriteday(rs.getTimestamp("writeday"));
+				list.add(dto);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -37,5 +38,27 @@ public class TestDao {
 			db.dbClose(rs, pstmt, conn);
 		}
 		return list;
+	}
+	
+	public void insertTest(TestDto dto) {
+		Connection conn=db.getConnction();
+		PreparedStatement pstmt=null;
+		String sql="insert into test01 (name,age,height,birth,writeday) values (?,?,?,?,now())";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			//바인딩
+			pstmt.setString(1, dto.getName());
+			pstmt.setString(2, dto.getAge());
+			pstmt.setDouble(3, dto.getHeight());
+			pstmt.setString(4, dto.getBirth());
+			
+			//실행
+			pstmt.execute();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			db.dbClose(pstmt, conn);
+		}
 	}
 }

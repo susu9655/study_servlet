@@ -1,15 +1,15 @@
 package servlet.test;
 
-public class TestDto {
+public class HelloDto {
 	private String name;
 	private String addr;
 	private String hp;
 	
-	public TestDto() {
+	public HelloDto() {
 		// 기본 생성자
 	}
 
-	public TestDto(String name, String addr, String hp) {
+	public HelloDto(String name, String addr, String hp) {
 		super();
 		this.name = name;
 		this.addr = addr;
