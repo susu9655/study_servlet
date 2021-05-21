@@ -49,9 +49,6 @@ public class MysqlConnect {
 			if(pstmt!=null) pstmt.close();
 			if(conn!=null) conn.close();
 			if(rs!=null) rs.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} catch (SQLException e) {}
 }
 }
