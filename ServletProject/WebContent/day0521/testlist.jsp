@@ -37,10 +37,10 @@
 			</td>
 			<td>
 				<button type="button" class="btn btn-xs btn-info"
-				onclick="location.href=''">수정</button>
+				onclick="location.href='updateform.do?num=${a.num}'">수정</button>
 				
 				<button type="button" class="btn btn-xs btn-danger"
-				onclick="location.href=''">삭제</button>
+				onclick="location.href='delete.do?num=${a.num}'">삭제</button>
 				
 			</td>
 		</tr>
