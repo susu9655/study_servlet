@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="guest">
+	<!-- 전체 개수 구하기 -->
+	<select id="totalCountOfGuest" resultType="int">	
+		select count(*) from mysqlguest
+	</select>
+	
+	<insert id="insertOfGuest" parameterType="gdto">
+		insert into mysqlguest (nickname,pass,avata,content,writeday) values (#{nickname},#{pass},#{avata},#{content},now())
+	</insert>
+	
+	<select id="pagingListOfGuest" parameterType="HashMap" resultType="gdto">
+		select * from mysqlguest order by num desc limit #{start},#{perpage}
+	</select>
+
+</mapper>
