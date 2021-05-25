@@ -49,7 +49,7 @@
 					<a href="updatepassform?num=${dto.num }&pageNum=${currentPage}">수정</a>
 				</span>
 				<span style="margin-left: 10px;" class="del">
-					<a href="updatepassform?num=${dto.num }&pageNum=${currentPage}">삭제</a>
+					<a href="deletepassform?num=${dto.num }&pageNum=${currentPage}">삭제</a>
 				</span>
 				
 				<span style="float: right;color: gray;font-size: 0.8em;">

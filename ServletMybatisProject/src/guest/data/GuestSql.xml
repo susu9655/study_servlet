@@ -13,5 +13,25 @@
 	<select id="pagingListOfGuest" parameterType="HashMap" resultType="gdto">
 		select * from mysqlguest order by num desc limit #{start},#{perpage}
 	</select>
+	
+	<!-- 비밀번호가 맞으면 1, 틀리면 0 반환 -->
+	<select id="passCheckOfGuest" parameterType="HashMap" resultType="int">
+		select count(*) from mysqlguest where num=#{num}
+		 and pass=#{pass}
+	</select>
+	
+	<select id="getDataOfGuest" parameterType="String" resultType="gdto">
+		select * from mysqlguest where num=#{num}
+	</select>
+	
+	<update id="updateOfGuest" parameterType="gdto">
+		update mysqlguest set nickname=#{nickname},avata=#{avata},
+		content=#{content} where num=#{num}
+	</update>
+	
+	<delete id="deleteOfGuest" parameterType="String">
+		delete from mysqlguest where num=#{num}
+	</delete>
+	
 
 </mapper>

@@ -47,4 +47,42 @@ public class GuestDao {
 		session.close();
 		return list;
 	}
+	
+	//비밀번호 체크
+		public int isCheckPass(String num,String pass)
+		{
+			int n;
+			session=getSession();
+			HashMap<String, String> map=new HashMap<String, String>();
+			map.put("num", num);
+			map.put("pass", pass);
+			
+			n=session.selectOne("passCheckOfGuest", map);
+			session.close();
+			return n;
+		}
+		
+		public GuestDto getData(String num)
+		{
+			GuestDto dto=null;
+			session=getSession();
+			dto=session.selectOne("getDataOfGuest", num);
+			session.close();
+			return dto;		
+		}
+		
+		public void updateGuest(GuestDto dto)
+		{
+			session=getSession();
+			session.update("updateOfGuest", dto);
+			session.close();		
+		}
+		
+		public void deleteGuest(String num)
+		{
+			session=getSession();
+			session.delete("deleteOfGuest", num);
+			session.close();		
+		}
+
 }
