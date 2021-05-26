@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<bean id="shop" class="day0526.ex3.Shop">
+		<constructor-arg value="red"></constructor-arg>
+		<property name="price" value="2999"/>
+		<property name="sangpum" value="블라우스"/>
+	</bean>
+	<bean id="jumun" class="day0526.ex3.Jumun">
+		<property name="shop" ref="shop"/>
+		<property name="cnt" value="3"/>
+	</bean>
+
+</beans>
