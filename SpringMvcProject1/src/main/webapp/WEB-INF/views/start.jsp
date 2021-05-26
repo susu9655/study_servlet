@@ -18,5 +18,7 @@
 <h3><a href="board/list">board/list</a></h3>
 <h3><a href="stu/info">stu/info</a></h3>
 <h3><a href="guest/form">guest/form</a></h3>
+<hr>
+<h3><a href="test/form">입력폼</a></h3>
 </body>
 </html>
