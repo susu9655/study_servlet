@@ -9,6 +9,10 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-
+<h3 class="alert alert-danger">map으로 읽기 결과</h3>
+<h3>이름 : ${name }</h3>
+<h3>3과목의 점수 : ${java }점, ${html }점, ${spring }점</h3>
+<h3>키 : ${height }</h3>
+<h3>몸무게 : ${weight }</h3>
 </body>
 </html>

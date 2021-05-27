@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,9 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-
+<h3 class="alert alert-danger">dto로 읽기 결과</h3>
+<h3>상품명 : ${dto.sang }</h3>
+<h3 style="color: ${dto.color}">색상 : ${dto.color }</h3>
+<h3>가격 : <fmt:formatNumber type="currency" value="${dto.price }"/></h3>
 </body>
 </html>

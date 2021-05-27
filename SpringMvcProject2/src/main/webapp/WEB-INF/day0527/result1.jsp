@@ -9,6 +9,9 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-
+<h2>각각 데이터를 읽은 결과</h2>
+<h3>이름 : ${name }</h3>
+<h3>성별 : ${gender }</h3>
+<h3>입사일 : ${ipsa }</h3>
 </body>
 </html>

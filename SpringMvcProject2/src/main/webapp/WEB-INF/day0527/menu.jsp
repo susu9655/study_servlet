@@ -21,5 +21,15 @@
 <h2>
 	<a href="form3">MAP으로 한꺼번에 읽기</a>
 </h2>
+<hr>
+<h2>PathVariable 연습하기</h2>
+<h3><a href="shop/addcart">장바구니에 추가</a></h3>
+<h3><a href="shop/cartlist">장바구니 출력</a></h3>
+<h3><a href="shop/delcart">장바구니상품 삭제</a></h3>
+<hr>
+<h2>스프링에서 이미지업로드 하기</h2>
+<h3><a href="imageform">업로드폼</a></h3>
+<h3><a href="imageform2">업로드폼(여러개 #1)</a></h3>
+<h3><a href="imageform3">업로드폼(여러개 #2)</a></h3>
 </body>
 </html>
