@@ -26,5 +26,9 @@ public class ShopDao extends SqlSessionDaoSupport{
 	public void updateShop(ShopDto dto) {
 		getSqlSession().update("updateOfShop",dto);
 	}
+	
+	public void deleteShop(String num) {
+		getSqlSession().delete("deleteOfShop",num);
+	}
 
 }

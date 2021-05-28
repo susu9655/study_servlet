@@ -22,4 +22,7 @@
 		</if>
 		where num=#{num}
 	</update>
+	<delete id="deleteOfShop" parameterType="String">
+		delete from shop where num=#{num}
+	</delete>
 </mapper>

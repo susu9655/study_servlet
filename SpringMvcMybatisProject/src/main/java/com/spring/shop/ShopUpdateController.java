@@ -64,4 +64,10 @@ public class ShopUpdateController {
 		
 		return "redirect:content?num="+dto.getNum();
 	}
+	
+	@GetMapping("/delete")
+	public String delete(@RequestParam String num) {
+		dao.deleteShop(num);
+		return "redirect:list";
+	}
 }
