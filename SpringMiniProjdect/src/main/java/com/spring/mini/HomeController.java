@@ -30,7 +30,7 @@ public class HomeController {
 	}
 	@GetMapping("/member/list")
 	public String memberlist() {
-		return "/member/memberlist";// 폴더명/파일명
+		return "/member/memberlist";// /폴더명/파일명
 	}
 	
 	@GetMapping("/board/list")
