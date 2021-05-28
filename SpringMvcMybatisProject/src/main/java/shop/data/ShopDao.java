@@ -3,7 +3,9 @@ package shop.data;
 import java.util.List;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class ShopDao extends SqlSessionDaoSupport{
 	public int getTotalCount() {
 		return getSqlSession().selectOne("shop.totalCountOfShop");
