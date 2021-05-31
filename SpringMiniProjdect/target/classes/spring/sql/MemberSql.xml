@@ -5,6 +5,12 @@
 		select count(*) from member where id=#{id}
 	</select>
 	<insert id="insertOfMember" parameterType="mdto">
-			insert into member (name,id,hp,gaipday) values (#{name},#{id},#{hp},now())
+			insert into member (name,id,hp,pass,gaipday) values (#{name},#{id},#{hp},#{pass},now())
 	</insert>
+	<select id="listAllOfMember" resultType="mdto">
+		select* from member order by num
+	</select>
+	<select id="loginCheckOfMember" parameterType="HashMap" resultType="int">
+		select count(*) from member where id=#{id} and pass=#{pass}
+	</select>
 </mapper>

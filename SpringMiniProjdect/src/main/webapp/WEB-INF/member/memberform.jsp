@@ -56,9 +56,16 @@
 			</td>
 		</tr>
 		<tr>
+			<th bgcolor="orange" width="120">비밀번호</th>
+			<td>
+				<input type="password" class="form-control" name="pass" placeholder="비밀번호" required style="width: 150px;">
+		
+			</td>
+		</tr>
+		<tr>
 			<td colspan="2" align="center">
 				<button type="submit" class="btn btn-info">회원가입</button>
-				<button type="button" class="btn btn-info" onclick="location.href='list'">목록</button>
+				<button type="button" class="btn btn-info" onclick="location.href='list'">회원명단</button>
 			</td>
 		</tr>
 	</table>

@@ -12,7 +12,7 @@
 <body>
 <c:set var="root" value="<%=request.getContextPath()%>"/>
 <a href="${root}/home">Home</a>&nbsp;&nbsp;
-<a href="${root}/member/form">Member</a>&nbsp;&nbsp;
+<a href="${root}/member/list">Member</a>&nbsp;&nbsp;
 <a href="${root}/board/list">Board</a>&nbsp;&nbsp;
 </body>
 </html>

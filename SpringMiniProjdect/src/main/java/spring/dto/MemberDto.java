@@ -7,6 +7,7 @@ public class MemberDto {
 	private String id;
 	private String name;
 	private String hp;
+	private String pass;
 	private Timestamp gaipday;
 	public String getNum() {
 		return num;
@@ -37,6 +38,12 @@ public class MemberDto {
 	}
 	public void setGaipday(Timestamp gaipday) {
 		this.gaipday = gaipday;
+	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 	
 }
