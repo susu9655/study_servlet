@@ -72,4 +72,6 @@ public class HomeController {
 	public String boardlist() {
 		return "/board/boardlist";
 	}
+	
+	
 }

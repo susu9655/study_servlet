@@ -29,4 +29,25 @@ public class MemberDao extends SqlSessionDaoSupport{
 		map.put("pass", pass);
 		return getSqlSession().selectOne("loginCheckOfMember",map);
 	}
+	
+	public MemberDto getMember(String num) {
+		return getSqlSession().selectOne("selectOneOfMember",num);
+	}
+	
+	public int passCheck(String num,String pass) {
+		HashMap<String, String>map=new HashMap<String, String>();
+		map.put("pass", pass);
+		map.put("num", num);
+		int count=getSqlSession().selectOne("passCheckOfMember",map);
+		return count;
+	}
+	
+	public void updateMember(MemberDto dto) {
+		getSqlSession().update("updateOfMember",dto);
+	}
+	
+	public void deleteMember(String num) {
+		getSqlSession().delete("deleteOfMember",num);
+		
+	}
 }

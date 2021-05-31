@@ -33,8 +33,8 @@
 				<fmt:formatDate value="${dto.gaipday }" pattern="yyyy-MM-dd HH:mm"/>
 			</td>
 			<td>
-				<button type="button" class="btn btn-info btn-xs" onclick="upateform?num=${dto.num}">수정</button>
-				<button type="button" class="btn btn-danger btn-xs" onclick="delete?num=${dto.num}">삭제</button>
+				<button type="button" class="btn btn-info btn-xs" onclick="location.href='updateform?num=${dto.num}'">수정</button>
+				<button type="button" class="btn btn-danger btn-xs" onclick="location.href='delete?num=${dto.num}'">삭제</button>
 			</td>
 		</tr>
 	</c:forEach>
