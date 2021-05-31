@@ -9,6 +9,11 @@
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 </head>
 <body>
-main
+<div style="margin: 30px 30px;">
+	<img alt="" src="image/조냥이.jpg" width="200">
+	<img alt="" src="image/s10.JPG" width="200">
+	<br>
+	<h2>Main Page!</h2>
+</div>
 </body>
 </html>
