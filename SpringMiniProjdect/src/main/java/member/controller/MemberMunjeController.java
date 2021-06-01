@@ -47,7 +47,7 @@ public class MemberMunjeController {
 			//저장된 아이디가 admin일 경우삭제후 멤버목록
 			dao.deleteMember(num);
 			return "redirect:list";
-		}else {
+		}else{
 			return "/member/idfail";
 		}
 	}

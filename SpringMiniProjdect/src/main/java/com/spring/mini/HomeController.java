@@ -68,10 +68,7 @@ public class HomeController {
 		return "redirect:home";
 	}
 	
-	@GetMapping("/board/list")
-	public String boardlist() {
-		return "/board/boardlist";
-	}
+	
 	
 	
 }
