@@ -45,7 +45,12 @@
 						<!-- 답글 이미지 -->
 						<img alt="" src="../image/re.png">
 					</c:if>
-					<a href="content?num=${dto.num }&pageNum=${currentPage }&key=list" style="color: black;text-decoration: none;">${dto.subject }</a>
+					<a href="content?num=${dto.num }&pageNum=${currentPage }&key=list" style="color: black;text-decoration: none;">
+					${dto.subject }
+					<c:if test="${dto.uploadname!='no' }">
+						<span class="glyphicon glyphicon-picture" style="color:#8C1C5A; "></span>
+					</c:if>
+					</a>
 				</td>
 				<td align="center">${dto.writer }</td>
 				<td align="center">

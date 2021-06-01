@@ -12,9 +12,12 @@
 		and restep>#{restep}
 	</update>
 	<insert id="insertOfBoard" parameterType="bdto">
-		insert into board (writer,id,subject,uploadname,cotent,reg,restep,relevel,readcount,writeday) values (
-		#{writer},#{id},#{subject},#{uploadname},#{content},#{reg},#{restep},#{relevel},0,now())
+		insert into board (writer,id,subject,uploadname,content,
+		reg,restep,relevel,readcount,writeday) values (#{writer},
+		#{id},#{subject},#{uploadname},#{content},#{reg},#{restep},
+		#{relevel},0,now())
 	</insert>
+
 	<select id="selectPagingOfBoard" parameterType="HashMap" resultType="bdto">
 		select * from board order by reg desc,restep asc limit #{start},#{perpage}
 	</select>
