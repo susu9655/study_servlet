@@ -59,7 +59,7 @@ public class BoardWriteController {
 			HttpServletRequest request
 			) {
 		//이미지가 업로드될 폴더 구하기
-		String path=request.getSession().getServletContext().getRealPath("/WEB-INF/upload");
+		String path=request.getSession().getServletContext().getRealPath("/WEB-INF/image");
 		System.out.println(path);
 		
 		//이미지 업로드 안했을 경우 no라고 저장

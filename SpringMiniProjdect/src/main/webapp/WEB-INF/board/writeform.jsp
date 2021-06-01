@@ -41,7 +41,7 @@
 		<tr>
 			<th bgcolor="#ddd" width="120">사진</th>
 			<td>
-				<input type="file" name="photo" value="${subject }" class="form-control" multiple>
+				<input type="file" name="photo" class="form-control" multiple>
 			</td>
 		</tr>
 			<tr>

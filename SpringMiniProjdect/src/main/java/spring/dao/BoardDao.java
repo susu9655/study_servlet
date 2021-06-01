@@ -11,7 +11,7 @@ import spring.dto.BoardDto;
 @Repository
 public class BoardDao extends SqlSessionDaoSupport{
 	public int getTotalCount() {
-		return getSqlSession().selectOne("totlaCountOfBoard");
+		return getSqlSession().selectOne("totalCountOfBoard");
 	}
 	
 	public int getmaxNum() {
@@ -22,33 +22,36 @@ public class BoardDao extends SqlSessionDaoSupport{
 		HashMap<String , Integer> map=new HashMap<String, Integer>();
 		map.put("reg", reg);
 		map.put("restep", restep);
-		getSqlSession().update("updateRestep",map);
+		getSqlSession().update("updateReadCountOfBoard",map);
 	}
 	
-	public void insertBoard(BoardDto dto) {
-		//원글인지 답글인지에 따라 값이 다르게 dto에 넣어서 전달
+	public void insertBoard(BoardDto dto)
+	{
+		//원글인지 답글인지에 따라 값이 다르게 dto 에 넣어서 전달
 		int num=dto.getNum();
 		int reg=dto.getReg();
 		int restep=dto.getRestep();
-		int relevel =dto.getRelevel();
+		int relevel=dto.getRelevel();
 		
-		if(num==0)//원글인 경우
+		if(num==0)//원글인경우
 		{
 			reg=this.getmaxNum()+1;
+			System.out.println(reg);
 			restep=0;
-			relevel=0;
-		}else {//답글인 경우
+			relevel=0;					
+		}else {//답글인경우
 			this.updateRestep(reg, restep);
 			restep+=1;
 			relevel+=1;
 		}
-		//변경된 3가지 값을 dto에 넣어준다
+		//변경된 3가지 값을 dto 에 넣어준다
 		dto.setReg(reg);
 		dto.setRestep(restep);
 		dto.setRelevel(relevel);
 		
 		getSqlSession().insert("insertOfBoard",dto);
 	}
+
 	
 	public List<BoardDto> getList(int start,int perpage){
 		HashMap<String, Integer>map = new HashMap<String, Integer>();
@@ -59,7 +62,7 @@ public class BoardDao extends SqlSessionDaoSupport{
 	}
 	
 	public void updateReadCount(int num) {
-		getSqlSession().update("updateReadCountOfBoard",num);
+		getSqlSession().update("updateRestepOfBoard",num);
 		
 	}
 	
