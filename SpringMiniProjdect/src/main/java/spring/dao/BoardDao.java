@@ -78,7 +78,15 @@ public class BoardDao extends SqlSessionDaoSupport{
 		getSqlSession().update("updateOfBoard",dto);
 	}
 	
-	public void deleteBoard(String num) {
+	public void deleteBoard(int num) {
 		getSqlSession().delete("deleteOfBoard",num);
+	}
+	
+	public List<BoardDto> getAllDatas(){
+		return getSqlSession().selectList("selectAllOfBoard");
+	}
+	
+	public List<BoardDto> getPhotoDatas(){
+		return getSqlSession().selectList("selectPhotoOfBoard");
 	}
 }

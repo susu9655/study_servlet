@@ -68,11 +68,16 @@ public class BoardUpdateController {
 	}
 	
 	@GetMapping("/board/delete")
-	public String delete(@RequestParam String pageNum, @RequestParam String num) {
-		
+	public String delete(
+			@RequestParam int num,
+			@RequestParam String pageNum
+			)
+	{
+		//ªË¡¶
 		dao.deleteBoard(num);
 		
 		return "redirect:list?pageNum="+pageNum;
 	}
+
 
 }

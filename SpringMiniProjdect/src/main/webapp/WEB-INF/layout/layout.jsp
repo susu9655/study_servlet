@@ -43,9 +43,9 @@
 		}
 		div.main{
 		position: absolute;
-		left: 300px;
+		left: 500px;
 		top: 160px;
-		width: 1000px;
+		width: 1200px;
 		height: 700px;
 		font-size: 15pt;
 		}

@@ -10,67 +10,67 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 <style type="text/css">
-	img.image{
-		border: 3px solid gray;
-	}
+   img.image{
+      border: 3px solid gray;
+   }
 </style>
 </head>
 <body>
 <table class="table" style="width: 650px;">
-	<caption><b>내용보기</b></caption>
-	<tr>
-		<th style="text-align: left;">
-			<span style="text-align: left;"><b style="text-align: left;">${dto.subject }</b></span>
-			<span style="color: #ddd;font-size: 0.8em;float: right;"><b>
-				<fmt:formatDate value="${dto.writeday }" pattern="yyyy-MM-dd HH:mm"/>
-			</b></span>
-		</th>
-	</tr>
-	<tr>
-		<th>
-			<span style="text-align: left;"><b>${dto.writer }(${sessionScope.myid })</b></span>
-			<span style="color: #ddd;font-size: 0.8em;float: right;"><b>
-				<span class="glyphicon glyphicon-eye-open"></span>${dto.readcount }
-			</b></span>
-		</th>
-	</tr>
-	<tr>
-		<td>
-			<div>
-				<c:if test="${dto.uploadname!='no' }">
-					<c:forTokens var="f" items="${dto.uploadname}" delims=",">
-						<div>
-						<a href="download?clip=${f}">
-							<span class="glyphicon glyphicon-download-alt"></span>
-							<span>${f}</span>
-						</a>
-						</div>
-					</c:forTokens>
-				</c:if>
-			</div>
-			<div style="width: 300px;">${dto.content }</div>
-			<div>
-				<c:forTokens items="${dto.uploadname }" delims="," var="photo">
-					<c:if test="${photo=='no' }">
-						<b></b>
-					</c:if>
-					<c:if test="${photo!='no' }">
-							<img src="../image/${photo }" style="width: 200px;" class="image">
-					</c:if>
-				</c:forTokens>
-			</div>
-		</td>
-	</tr>
+   <caption><b>내용보기</b></caption>
+   <tr>
+      <th style="text-align: left;">
+         <span style="text-align: left;"><b style="text-align: left;">${dto.subject }</b></span>
+         <span style="color: #ddd;font-size: 0.8em;float: right;"><b>
+            <fmt:formatDate value="${dto.writeday }" pattern="yyyy-MM-dd HH:mm"/>
+         </b></span>
+      </th>
+   </tr>
+   <tr>
+      <th>
+         <span style="text-align: left;"><b>${dto.writer }(${dto.id })</b></span>
+         <span style="color: #ddd;font-size: 0.8em;float: right;"><b>
+            <span class="glyphicon glyphicon-eye-open"></span>${dto.readcount }
+         </b></span>
+      </th>
+   </tr>
+   <tr>
+      <td>
+         <div>
+            <c:if test="${dto.uploadname!='no' }">
+               <c:forTokens var="f" items="${dto.uploadname}" delims=",">
+                  <div>
+                  <a href="download?clip=${f}">
+                     <span class="glyphicon glyphicon-download-alt"></span>
+                     <span>${f}</span>
+                  </a>
+                  </div>
+               </c:forTokens>
+            </c:if>
+         </div>
+         <div style="width: 300px;">${dto.content }</div>
+         <div>
+            <c:forTokens items="${dto.uploadname }" delims="," var="photo">
+               <c:if test="${photo=='no' }">
+                  <b></b>
+               </c:if>
+               <c:if test="${photo!='no' }">
+                     <img src="../image/${photo }" style="width: 200px;" class="image">
+               </c:if>
+            </c:forTokens>
+         </div>
+      </td>
+   </tr>
 </table>
 <div>
-	<c:if test="${sessionScope.myid!=null }">
-		<button type="button" class="btn btn-info" style="margin-left: 10px;" onclick="location.href='form?num=${dto.num}&reg=${dto.reg}&restep=${dto.restep}&relevel=${dto.relevel}&pageNum=${pageNum}'">답글쓰기</button>
-	</c:if>
-	<c:if test="${dto.id==sessionScope.myid}">
-		<button type="button" class="btn btn-info" style="margin-left: 10px;" onclick="location.href='updateform?num=${dto.num}&pageNum=${pageNum }'">수정</button>
-		<button type="button" class="btn btn-info" style="margin-left: 10px;" onclick="location.href='delete?num=${dto.num}&pageNum=${pageNum }'">삭제</button>
-	</c:if>
-	<button type="button" class="btn btn-info" style="margin-left: 10px;" onclick="history.back()">목록보기</button>
+   <c:if test="${sessionScope.myid!=null }">
+      <button type="button" class="btn btn-info" style="margin-left: 10px;" onclick="location.href='form?num=${dto.num}&reg=${dto.reg}&restep=${dto.restep}&relevel=${dto.relevel}&pageNum=${pageNum}'">답글쓰기</button>
+   </c:if>
+   <c:if test="${dto.id==sessionScope.myid}">
+      <button type="button" class="btn btn-info" style="margin-left: 10px;" onclick="location.href='updateform?num=${dto.num}&pageNum=${pageNum }'">수정</button>
+      <button type="button" class="btn btn-info" style="margin-left: 10px;" onclick="location.href='delete?num=${dto.num}&pageNum=${pageNum }'">삭제</button>
+   </c:if>
+   <button type="button" class="btn btn-info" style="margin-left: 10px;" onclick="history.back()">목록보기</button>
 </div>
 </body>
 </html>

@@ -80,4 +80,9 @@ public class BoardListController {
 		mview.setViewName("/board/boardlist");
 		return mview;
 	}
+	
+	@GetMapping("/board/list2")
+	public String list2() {
+		return "/board/ajaxlist";
+	}
 }
