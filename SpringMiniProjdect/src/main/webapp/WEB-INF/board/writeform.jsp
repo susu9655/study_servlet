@@ -53,7 +53,7 @@
 		<tr>
 			<td colspan="2" align="center">
 				<button type="submit" class="btn btn-default" style="width: 120px;">글작성</button>
-				<button type="submit" class="btn btn-default" style="width: 120px;" onclick="history.back()">이전</button>
+				<button type="button" class="btn btn-default" style="width: 120px;" onclick="history.back()">이전</button>
 			</td>
 		</tr>
 	</table>

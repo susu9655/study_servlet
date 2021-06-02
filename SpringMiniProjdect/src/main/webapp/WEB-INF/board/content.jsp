@@ -36,6 +36,18 @@
 	</tr>
 	<tr>
 		<td>
+			<div>
+				<c:if test="${dto.uploadname!='no' }">
+					<c:forTokens var="f" items="${dto.uploadname}" delims=",">
+						<div>
+						<a href="download?clip=${f}">
+							<span class="glyphicon glyphicon-download-alt"></span>
+							<span>${f}</span>
+						</a>
+						</div>
+					</c:forTokens>
+				</c:if>
+			</div>
 			<div style="width: 300px;">${dto.content }</div>
 			<div>
 				<c:forTokens items="${dto.uploadname }" delims="," var="photo">
